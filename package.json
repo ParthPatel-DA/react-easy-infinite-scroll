@@ -1,0 +1,67 @@
+{
+  "name": "react-easy-infinite-scroll",
+  "version": "0.0.1",
+  "description": "It's easy to import and use the component for infinite data scroll.",
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ]
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "react",
+    "infinite-scroll",
+    "infinite",
+    "scroll",
+    "component",
+    "react-component"
+  ],
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3"
+  },
+  "scripts": {
+    "publish:npm": "rm -rf dist && mkdir dist && babel ./src -d dist --copy-files",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/preset-react": "^7.13.13"
+  },
+  "author": "Parth Patel <parthpatel454500@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ParthPatel-DA/react-easy-infinite-scroll/issues"
+  },
+  "homepage": "https://github.com/ParthPatel-DA/react-easy-infinite-scroll#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ParthPatel-DA/react-easy-infinite-scroll.git"
+  }
+}
