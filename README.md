@@ -1,4 +1,4 @@
-# react-easy-infinite-scroll [![npm](https://img.shields.io/npm/dt/react-easy-infinite-scroll.svg?style=flat-square)](https://www.npmjs.com/package/react-easy-infinite-scroll) [![npm](https://img.shields.io/npm/v/react-easy-infinite-scroll.svg?style=flat-square)](https://www.npmjs.com/package/react-easy-infinite-scroll)
+# react-easy-infinite-scroll <br/> [![npm](https://img.shields.io/npm/dt/react-easy-infinite-scroll.svg?style=flat-square)](https://www.npmjs.com/package/react-easy-infinite-scroll) [![npm](https://img.shields.io/npm/v/react-easy-infinite-scroll.svg?style=flat-square)](https://www.npmjs.com/package/react-easy-infinite-scroll) ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
@@ -10,7 +10,7 @@ A component to make all your infinite scrolling!
 
 ## Install
 
-```bash
+```jsx
   npm install --save react-easy-infinite-scroll
 
   or
@@ -18,9 +18,10 @@ A component to make all your infinite scrolling!
   yarn add react-easy-infinite-scroll
 
   // in code ES6
-  import InfiniteScroll from 'react-easy-infinite-scroll';
+  import ReactEasyInfiniteScroll from 'react-easy-infinite-scroll';
+
   // or commonjs
-  var InfiniteScroll = require('react-easy-infinite-scroll');
+  var ReactEasyInfiniteScroll = require('react-easy-infinite-scroll');
 ```
 
 ## Using
