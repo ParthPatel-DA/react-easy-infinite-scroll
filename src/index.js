@@ -29,12 +29,12 @@ const ReactEasyInfiniteScroll = (props) => {
 
   useEffect(() => {
     setTimeout(() => {
-      if (!elementSection) {
+      if (!sectionScroll) {
         window.addEventListener("scroll", isInViewport);
       }
     }, 1000);
     return () => {
-      if (!elementSection) {
+      if (!sectionScroll) {
         window.removeEventListener("scroll", isInViewport);
       }
     };
