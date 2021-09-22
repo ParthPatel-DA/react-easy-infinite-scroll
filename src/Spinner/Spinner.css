@@ -21,7 +21,9 @@
   transform: translateZ(0);
   -webkit-animation-delay: -0.16s;
   animation-delay: -0.16s;
-  @media (min-width: 300px) {
+}
+@media (min-width: 300px) {
+  .loader {
     margin: 230px auto;
   }
 }
@@ -31,7 +33,7 @@
 }
 .loader:before,
 .loader:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
 }

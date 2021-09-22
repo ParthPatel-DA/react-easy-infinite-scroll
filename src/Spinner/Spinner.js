@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Spinner.scss";
+import "./Spinner.css";
 
 const Spinner = (props) => {
   const { withoutMargin, loaderColor } = props;

@@ -9,11 +9,15 @@ const ReactEasyInfiniteScroll = (props) => {
     totalRecords = 0,
     loader,
     loaderColor,
+    children,
+    sectionScroll,
+    sectionClass = "",
   } = props;
   const [isVisible, setIsVisible] = useState(false);
   const [waitForResponse, setWaitForResponse] = useState(false);
   const [loadMore, setLoadMore] = useState(true);
   const element = useRef(null);
+  const elementSection = useRef(null);
 
   const isInViewport = () => {
     const offset = 0;
@@ -25,12 +29,29 @@ const ReactEasyInfiniteScroll = (props) => {
 
   useEffect(() => {
     setTimeout(() => {
-      window.addEventListener("scroll", isInViewport);
+      if (!elementSection) {
+        window.addEventListener("scroll", isInViewport);
+      }
     }, 1000);
     return () => {
-      window.removeEventListener("scroll", isInViewport);
+      if (!elementSection) {
+        window.removeEventListener("scroll", isInViewport);
+      }
     };
   }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (sectionScroll && elementSection.current) {
+        elementSection.current.addEventListener("scroll", isInViewport);
+      }
+    }, 1000);
+    return () => {
+      if (sectionScroll && elementSection.current) {
+        elementSection.current.addEventListener("scroll", isInViewport);
+      }
+    };
+  }, [elementSection.current]);
 
   useEffect(() => {
     if (listLength) {
@@ -57,11 +78,14 @@ const ReactEasyInfiniteScroll = (props) => {
   return (
     <>
       {/* {console.log(ReactDOM)} */}
-      {listLength !== undefined && loadMore && (
-        <div ref={element}>
-          {loader || <Spinner withoutMargin loaderColor={loaderColor} />}
-        </div>
-      )}
+      <div className={sectionClass} ref={elementSection}>
+        {children}
+        {listLength !== undefined && loadMore && (
+          <div ref={element}>
+            {loader || <Spinner withoutMargin loaderColor={loaderColor} />}
+          </div>
+        )}
+      </div>
     </>
   );
 };
