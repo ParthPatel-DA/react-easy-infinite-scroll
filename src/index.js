@@ -20,11 +20,23 @@ const ReactEasyInfiniteScroll = (props) => {
   const elementSection = useRef(null);
 
   const isInViewport = () => {
-    const offset = 0;
+    // const offset = 0;
+    // if (!element.current) return false;
+    // const { top } = element.current.getBoundingClientRect();
+    // setIsVisible(top + offset >= 0 && top - offset <= window.innerHeight);
+    // return top + offset >= 0 && top - offset <= window.innerHeight;
     if (!element.current) return false;
-    const { top } = element.current.getBoundingClientRect();
-    setIsVisible(top + offset >= 0 && top - offset <= window.innerHeight);
-    return top + offset >= 0 && top - offset <= window.innerHeight;
+
+    const { innerHeight, innerWidth } = window;
+    const { clientHeight, clientWidth } = document.documentElement;
+
+    const rect = element.current.getBoundingClientRect();
+    setIsVisible(
+      rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (innerHeight || clientHeight) &&
+        rect.right <= (innerWidth || clientWidth)
+    );
   };
 
   useEffect(() => {
@@ -59,10 +71,12 @@ const ReactEasyInfiniteScroll = (props) => {
         setLoadMore(false);
       } else {
         setLoadMore(true);
+        isInViewport();
       }
     } else {
       setLoadMore(false);
     }
+
     setWaitForResponse(false);
   }, [listLength]);
 
