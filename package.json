@@ -1,6 +1,6 @@
 {
   "name": "react-easy-infinite-scroll",
-  "version": "0.0.1",
+  "version": "0.1.6",
   "description": "It's easy to import and use the component for infinite data scroll.",
   "babel": {
     "presets": [
